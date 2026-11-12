@@ -38,14 +38,21 @@
   </div>
 
   <script>
-    /*
-    실습 2 · 기본
+ const scores = [95, 42, 88, 67, 55];
 
-    문제: 점수 배열 [95, 42, 88, 67, 55]에서 60점 이상만 골라 새 배열을 만들고, 그 개수와 평균을 출력하세요.
-    힌트: filter로 고르고, reduce로 합을 구한 뒤 length로 나눕니다.
-    꼭 들어가야 하는 것: .filter(  >= 60|>=60  .reduce(  .length  console.log
-    */
-    // 여기에 JavaScript를 작성하세요
+// 60점 이상인 점수만 선택
+const passed = scores.filter(score => score >= 60);
+
+// 합계 구하기
+const sum = passed.reduce((total, score) => total + score, 0);
+
+// 개수와 평균 구하기
+const count = passed.length;
+const average = sum / count;
+
+console.log("60점 이상 점수:", passed);
+console.log("개수:", count);
+console.log("평균:", average.toFixed(2));
   </script>
 </body>
 </html>
