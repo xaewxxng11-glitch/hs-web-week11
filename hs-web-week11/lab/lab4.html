@@ -38,14 +38,34 @@
   </div>
 
   <script>
-    /*
-    실습 4 · 심화
+   // 상품 배열 만들기
+const products = [
+    { id: 1, name: "노트북", price: 1200000, stock: 5 },
+    { id: 2, name: "마우스", price: 30000, stock: 0 },
+    { id: 3, name: "키보드", price: 80000, stock: 10 },
+    { id: 4, name: "모니터", price: 350000, stock: 0 },
+    { id: 5, name: "헤드셋", price: 150000, stock: 3 }
+];
 
-    문제: 상품 배열에서 ① 총 재고 금액 ② 재고가 0인 상품 이름 ③ 가장 비싼 상품을 구해 출력하세요. 상품은 id·name·price·stock을 가집니다.
-    힌트: reduce로 합계, filter로 품절, sort나 reduce로 최고가를 구합니다. 원본을 정렬하지 않도록 복사해서 정렬하세요.
-    꼭 들어가야 하는 것: .reduce(  .filter(  stock === 0|stock===0  .sort(  ...products|[...
-    */
-    // 여기에 JavaScript를 작성하세요
+// ① 총 재고 금액
+const total = products.reduce(
+    (sum, p) => sum + (p.price * p.stock), 0
+);
+
+// ② 재고가 0인 상품 이름
+const soldOut = products
+    .filter(p => p.stock === 0)
+    .map(p => p.name);
+
+// ③ 가장 비싼 상품
+const expensive = [...products].sort(
+    (a, b) => b.price - a.price
+)[0];
+
+// 결과 출력
+console.log("총 재고 금액:", total);
+console.log("품절 상품:", soldOut);
+console.log("가장 비싼 상품:", expensive.name);
   </script>
 </body>
 </html>
