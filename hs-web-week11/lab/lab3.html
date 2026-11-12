@@ -38,14 +38,19 @@
   </div>
 
   <script>
-    /*
-    실습 3 · 응용
+   const students = [
+    { name: "최재웅", year: 1, score: 95 },
+    { name: "이예찬", year: 2, score: 88 },
+    { name: "김한신", year: 1, score: 90 }
+];
 
-    문제: 학생 객체 배열을 만들고(이름·학년·점수 3명 이상), 1학년만 골라 이름만 뽑은 뒤 쉼표로 이어 출력하세요.
-    힌트: filter → map → join 을 이어서 씁니다. 체이닝이라고 부릅니다.
-    꼭 들어가야 하는 것: .filter(  .map(  .join(  year === 1|year===1
-    */
-    // 여기에 JavaScript를 작성하세요
+// 1학년만 고르고 이름만 추출해서 쉼표로 연결
+const result = students
+    .filter(student => student.year === 1)
+    .map(student => student.name)
+    .join(", ");
+
+console.log(result);
   </script>
 </body>
 </html>
